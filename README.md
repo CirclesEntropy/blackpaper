@@ -1,6 +1,14 @@
-
+<style tyle="text/css">
+p {
+text-align: justify;
+}
+</style>
 
 # Circles Entropy: An Anonymous Trust and Credit System
+
+David Dashian, Ajinkya Kulkarni, Julio Linares and Kaustubh Srikanth
+
+*(draft version for review)*
 
 ## Abstract
 
@@ -25,32 +33,37 @@ The following sections provide a detailed technical overview of the various comp
 
 Entropy is a physical concept that measures the degree of disorder or randomness in a system. Physicist Erwin Schrödinger once argued that living organisms, including human beings, are able to maintain a relatively low level of entropy or disorder within their bodies, despite being subject to the second law of thermodynamics, which states that the entropy of a closed system tends to increase over time. Schrödinger used the term "islands of low entropy" to describe living organisms, which are able to maintain a highly ordered state in the face of the increasing disorder of the surrounding environment. He believed that this ability to maintain low entropy was linked to the ability of living organisms to store and utilize information, and he suggested that the genetic code might be the basis of this information storage and processing. 
 
-As humans become seamlessly entangled with the data they produce and in the process form their own data personas, be it social media activity or the number of steps taken today, it become increasingly important to reduce entropy of this data in order to not completely extricate it from the human being it represents. Unfortunately, doing so seems to be the dominant paradigm with authority figures from state institutions to corporations leaving no stone unturned to indulge in a debauched degeneration of the human identity to "just some data" that may be circulated, manipulated and used for malicious purposes with impunity. Transposing the ideas of Schrödinger, "islands of low entropy" must actively be maintained in such systems by providing the most robust privacy and security guarantees for their users.
+As humans become seamlessly entangled with the data they produce and in the process form their own data personas, be it social media activity or the number of steps taken today, it become increasingly important to reduce entropy of this data in order to not completely abstract it from the human being it represents. Transposing the ideas of Schrödinger, "islands of low entropy" must actively be maintained in such systems by providing the most robust privacy and security guarantees for their users.
 
 
-Attempting to address this problem leads to questions such as: what if it were possible to perform meaningful computations on data where the individual inputs of each person are hidden, and where the outputs enabled people to perform meaningful actions without revealing who is who in the network? What if people were not seen as data to be exploited but as a co-creators of their own worlds?
+Attempting to address this problem leads to questions such as: what if it were possible to perform meaningful computations on data where the individual inputs of each person are hidden, and where the outputs enabled people to perform meaningful actions without revealing who is who in the network?
 
-This blackpaper outlines the efforts of Circles Entropy to address aspects of these questions, and even provide answers. Circles Entropy was initially conceived as a project to implement an anonymous web-of-trust (AWoT). Ruminating on the concept of an anonymous web of trust (AWoT) from a technical viewpoint, Circles Entropy broadened its focus as a project that seeks to anonymize social relationships at the data computation level. Our aim is to create a framework where individuals can interact with zero compromises on privacy.
+This blackpaper outlines the efforts of Circles Entropy to provide answers to these questions. Circles Entropy was initially conceived as a project to implement an anonymous web-of-trust (AWoT). Ruminating on the concept of an AWoT from a technical viewpoint, Circles Entropy broadened its focus as a project that seeks to anonymize social relationships at the data computation level. Our aim is to create a framework where individuals can interact with zero compromises on privacy.
 
-Circles Entropy is a research and development project that involves two threads of inquiry. One thread relates to society and technology, which involves researching and implementing better socio-economic systems such as  mutual credit, mesh credit and credit-clearing structures. The second one is concerned with security and privacy, which involves developing better privacy-preserving protocols. In practice, Circles Entropy is composed of a suite of cutting-edge cryptographic protocols and privacy-preserving technology.
 
-While Circles Entropy can be applied to various computational scenarios requiring robust security and privacy guarantees, our current emphasis lies in graph computations. Graph data structures emerge when modeling socio-economic phenomena, as social relations can be represented as graphs with nodes for entities (individuals, accounts, etc.) and edges representing interactions (trust relations, transactions etc.) between them.
-
-To illustrate the practical utility of Circles Entropy, consider a network of individuals possessing digital certificates, which serve as endorsements of trust towards others in the network. Suppose two parties within this network wish to exchange money and need to establish the existence of a chain of certificates between them before proceeding. Circles Entropy enables computing the cryptographic proof of such a certificate chain without divulging any information about the specific trust connections to the computing parties. By validating the presence of a trust path, the transacting parties can proceed with their exchange. In this setting, individuals only possess knowledge of their own localized trust network, and no additional information about the network is available except for the existence of valid trust connections, facilitating monetary transactions.
-
-*(could we try uploading the image again?)*
-Caption: Other relations that can be modelled as graphs include monetary transactions, where each node is treated as an account in a directed multigraph. Circles Entropy would enable applications such as circular credit clearing in this data context.
+<!-- Other relations that can be modelled as graphs include monetary transactions, where each node is treated as an account in a directed multigraph. Circles Entropy would enable applications such as circular credit clearing in this data context.-->
 
 In the subsequent sections, we outline the system architecture of the Circles Entropy project, explore its applications, and discuss potential avenues for future research.
 
 
 ## System Architecture
 
+ In practice, Circles Entropy is composed of a suite of cutting-edge cryptographic protocols and privacy-preserving technology. While Circles Entropy can be applied to various computational scenarios requiring robust security and privacy guarantees, our current emphasis lies in graph computations. Graph data structures emerge when modeling socio-economic phenomena, as social relations can be represented as graphs with nodes for entities (individuals, accounts, etc.) and edges representing interactions (trust relations, transactions etc.) between them.
+
+
+To illustrate the practical utility of Circles Entropy, consider a network of individuals possessing digital certificates, which serve as endorsements of trust towards others in the network. Suppose two parties within this network wish to exchange money and need to establish the existence of a chain of certificates between them before proceeding. Circles Entropy enables computing the cryptographic proof of such a certificate chain without divulging any information about the specific trust connections to the computing parties. By validating the presence of a trust path, the transacting parties can proceed with their exchange. In this setting, individuals only possess knowledge of their own localized trust network, and no additional information about the network is available except for the existence of valid trust connections, facilitating monetary transactions.
+
+
 This section provides a high-level overview of Circles Entropy's architecture. Circles Entropy builds on the Anoma protocol stack to provide a solution for anonymizing trust relations encoded as commitments submitted by users. Circles Entropy's architecture is comprised of four parts: an intent gossip network, a graph solver network, a settlement layer and a utility token. As an illustrative example to describe the Circles Entropy architecture in practice, we consider CirclesUBI, an universal basic income project based on mesh-credit. We then take a brief look at Taiga, a framework for generalized shielded state transitions that Circles Entropy builds on. Finally, we briefly describe the role of graph solvers, a concept specific and critical to Circles Entropy.
 
 ### Anonymous CirclesUBI
 
 [CirclesUBI](https://handbook.joincircles.net/docs/developers/whitepaper) is a money system that is based on individualized cryptocurrencies and a social graph of trust between these currencies. When new users join CirclesUBI, a new personal Circles (CRC) cryptocurrency is created for them on a smart contract-enabled blockchain. This currency is then regularly minted and added to their account, forming the basis of CirclesUBI's properties. Users have the ability to trust the personal currencies of other users, which requires them to treat this personal currency as identical to any other Circles (CRC) currencies that they hold. As the social graph becomes more interconnected, this network of personal currencies converges to a single planetary monetary system. 
+
+
+![](https://hackmd.io/_uploads/HkpRwUXS2.jpg =350x350) ![](https://hackmd.io/_uploads/Hy2CDLmr2.jpg =350x350)
+
+*The trust graph (left) and the payment graph (right) for CirclesUBI. (Credit: Teodoro Criscione)*
 
 #### Protocol Description
 
@@ -84,7 +97,7 @@ All trust commitments submitted by people in a network constitute a graph that w
 Given that computations involving the complete trust graph are impractical in a model where each solver computes incrementally by composing state transitions, algorithms that use heuristics and do not traverse large sections of the graph for calculating paths are more effective. As a consequence, along with ability to observe the next hops from each node, solvers need to maintain a cache to provide heuristics data for tagged node clusters.
 
 
-### Incentives and the Utility Token (Ensō): Gossips and Solvers
+### Incentives and the Utility Token (Ensō): Gossip and Solvers
 
 In the Circles Entropy network, both gossip nodes and solver nodes have distinct incentives to participate.
 
@@ -92,11 +105,13 @@ Every completed state transition will include a way to unlock funds to pay every
 
 <!-- TODO: add details about incentives --> 
 
-The word "gossip" has a complex history, rooted in the persecution of women during the witch hunts of the 16th and 17th centuries. In her book "Caliban and the Witch," Silvia Federici argues that gossip was a powerful tool of resistance for women during this time period. During the witch hunts, women were often accused of engaging in "gossip" or spreading malicious rumors. This was used as evidence of their supposed witchcraft and was often enough to condemn them to death. However, gossip was actually a form of collective resistance for women. Women would gather together and share information about their lives, their struggles, and their oppressors. This allowed them to build solidarity and support each other [^2].
+The word "gossip" has a complex history, rooted in the persecution of women during the witch hunts of the 16th and 17th centuries. In her book "Caliban and the Witch," Silvia Federici argues that gossip was a powerful tool of resistance for women during this time period. During the witch hunts, women were often accused of engaging in "gossip" or spreading malicious rumors. This was used as evidence of their supposed witchcraft and was often enough to condemn them to death. However, gossip was actually a form of collective resistance for women. Women would gather together and share information about their lives, their struggles, and their oppressors. This allowed them to build solidarity and support each other.
 
 [^2]: The word "gossip" itself has its roots in Old English, where it referred to a godparent or sponsor at a baptism. Over time, it came to be associated with the sharing of personal information and rumors. During the witch hunts, this association was weaponized against women, as their gatherings and conversations were seen as evidence of their supposed witchcraft. Today, the word "gossip" still carries negative connotations, but we have to remember it can also be a powerful tool of resistance and solidarity for marginalized communities.
 
-To incentivise participants and encourage them to contribute their computing power to the network, we propose the use of a utility token called Ensō. Participants can earn Ensō tokens by providing their computing power to assist other participants within the network. Similarly, participants can utilize their tokens to request the services of solvers and gossip nodes from other participants.
+To incentivise participants and encourage them to contribute their computing power to the network, we propose the use of a utility token called Ensō, after Japanese word that refers to a circular symbol used in Zen Buddhism[^enso]. Participants can earn Ensō tokens by providing their computing power to assist other participants within the network. Similarly, participants can utilize their tokens to request the services of solvers and gossip nodes from other participants.
+
+[^enso]: The symbol is created with a single brushstroke and represents enlightenment, strength, elegance, and the universe. The simplicity and fluidity of the Ensō symbol are said to represent the essence of Zen philosophy, which emphasizes the importance of living in the present moment and letting go of attachment to material possessions and ego.
 
 The cost per solver operation and the maintenance of gossip nodes within Circles Entropy will be determined by several factors, including the complexity of the computation, the computing power required, the supply and demand dynamics of computing resources within the network, as well as the labor costs associated with maintaining and developing the Circles Entropy protocol.
 
@@ -123,13 +138,15 @@ Account address and amount anonymity is provided using zero-knowledge proofs. Pa
 
 ### Function Privacy
 
-Application logic is declarative and encoded in form of validity predicates.  Although they are hidden from third party observers, user intents need to be revealed to solvers.  Despite the fact that accounts are hidden, trust commitments effectively encode a trust graph and it is easy to imagine how such information could potentially be used to deanonymise users.  This difficult problem is of central importance for our further research.
+Application logic is declarative and encoded in form of validity predicates.  Although they are hidden from third party observers, user intents need to be revealed to solvers.  Despite the fact that accounts are hidden, trust commitments effectively encode a trust graph and it is easy to imagine how such information could potentially be used to deanonymise users.  This difficult problem is of central importance for our further research. 
 
 ## Research Directions
 
+Circles Entropy is a research and development project that involves two threads of inquiry.  The first thread is concerned with security and privacy, which involves developing better privacy-preserving protocols. The second thread relates to society and technology, which involves researching and implementing better socio-economic systems such as  mutual credit, mesh credit and credit-clearing structures. 
+
 ### Privacy and Security
 
-#### Collaborative zkSNARKs for encrypted solving
+#### Collaborative zkSNARKs for Encrypted Solving
 
 Collaborative zk-snarks (or "coSNARKs", introduced by [Boneh-Ozdemir](https://eprint.iacr.org/2021/1530.pdf)) propose a method to generate SNARK proofs involving a witness that is distributedly held among several parties. They exploit the linear nature of polynomial commitments and elliptic curve operations (addition and scaling) to implement an effective secret-sharing scheme among mutually distrusting parties. 
 
@@ -155,7 +172,7 @@ A mesh credit network is a distributed credit network that enables users to lend
 
 The use case for anonymous credit and payment systems using Circles Entropy is that it can enhance the privacy and security of mesh credit networks by enabling participants to transact without revealing their identity or transaction history. A user can prove that they have the necessary creditworthiness or collateral to participate in the network, without revealing any sensitive information about their identity or financial history.
 
-For example, a user could prove that they have sufficient funds to repay a p2p loan, without revealing their account balance or transaction history. Similarly, a user could prove that they are eligible to participate in the network based on their creditworthiness or collateral, without revealing their credit score or other sensitive financial information. Similarly, different forms of debt-cancellation on a p2p level become possible with anonymous mesh credit networks [^1]. This level of privacy and security is particularly valuable in mesh credit networks, where participants are often transacting with others they do not know or trust. By using Circles Entropy, participants can transact with confidence, knowing that their privacy and security are protected, and that they can participate in the network without the need for a central authority or financial institution mediating the trust.
+For example, a user could prove that they have sufficient funds to repay a p2p loan, without revealing their account balance or transaction history. Similarly, a user could prove that they are eligible to participate in the network based on their creditworthiness or collateral, without revealing their credit score or other sensitive financial information. Similarly, different forms of debt-cancellation on a p2p level become possible with anonymous mesh credit networks. This level of privacy and security is particularly valuable in mesh credit networks, where participants are often transacting with others they do not know or trust. By using Circles Entropy, participants can transact with confidence, knowing that their privacy and security are protected, and that they can participate in the network without the need for a central authority or financial institution mediating the trust.
 
 [^1]: Thanks to Andrew Miller for this point. 
 
@@ -167,15 +184,16 @@ Credit clearing systems (Fleischmann, Dini, Littera 2020) designed to facilitate
 
 #### Social Media Moderation
 
-With the decadence of platforms like Facebook, we see that there is a need to have social media platforms that bring back the joy of interacting with one's trusted peers online. Protocols like Scuttlebutt and ActivityPub prove that alternatives are possible that strive for distributed architectures and are people-focused. Leveraging the anonymity of trust graph data  we can enabe new modes of decentralized content moderation without compromising on privacy.
+With the decadence of platforms like Facebook, we see that there is a need to have social media platforms that bring back the joy of interacting with one's trusted peers online. Protocols like Scuttlebutt and ActivityPub prove that alternatives are possible that strive for distributed architectures and are people-focused. Leveraging the anonymity of trust graph data  we can enable new modes of decentralized content moderation without compromising on privacy.
 
 #### Spam Protection
 
 Circles Entropy can be useful in preventing spam or unwanted messages from being sent through a communication network. This is particularly so for email filtering and in preventing unwanted messages on a messaging app. Email filtering is an essential feature for modern email clients and is used to prevent spam and malicious emails from reaching the user's inbox. Traditional email filtering approaches rely on sender reputation or content analysis, which can be ineffective against sophisticated spamming techniques. Circles Entropy  can be used to create a more secure and privacy-preserving email filtering system.
 
-
 ## Conclusion
 
-Today, the mechanics and incentives of the technological landscape are shaped by a business model based on trusting a third party with potentially-sensitive data. Current technological imaginations posit that data exploitation is a necessary precondition for accessing services online, with the alternative being having no services at all. The question appears as one between utility opposed to privacy, one between transparency versus anonymity, between the public and the private spheres of life. This, we think, is a false binary choice perpetrated by the logic upon which technology is conceived today.
+Today, the mechanics and incentives of the technological landscape are shaped by a business model based on trusting a third party with potentially-sensitive data. Current technological imaginations posit that data exploitation is a necessary precondition for accessing services online, with the alternative being having no services at all. 
 
-Circles Entropy points towards an autonomous technological imagination where people are able to trust and interact with each other knowing there is no third party watching.
+Powerful entities continue to leave no stone unturned to indulge in a debauched degeneration of the human identity to "just some data" that may be circulated, manipulated and used for malicious purposes with impunity.  The question appears as one between utility opposed to privacy, one between transparency versus anonymity, between the public and the private spheres of life. This, we think, is a false binary choice perpetrated by the logic upon which technology is conceived today.
+
+Circles Entropy points towards an autonomous technological imagination where people are able to trust and interact with each other knowing there is no third party watching, where they are not seen as data to be exploited but as a co-creators of their own worlds.
