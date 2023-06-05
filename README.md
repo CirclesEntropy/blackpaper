@@ -1,8 +1,4 @@
-<style tyle="text/css">
-p {
-text-align: justify;
-}
-</style>
+<p align="justify">
 
 # Circles Entropy: An Anonymous Trust and Credit System
 
@@ -197,3 +193,6 @@ Today, the mechanics and incentives of the technological landscape are shaped by
 Powerful entities continue to leave no stone unturned to indulge in a debauched degeneration of the human identity to "just some data" that may be circulated, manipulated and used for malicious purposes with impunity.  The question appears as one between utility opposed to privacy, one between transparency versus anonymity, between the public and the private spheres of life. This, we think, is a false binary choice perpetrated by the logic upon which technology is conceived today.
 
 Circles Entropy points towards an autonomous technological imagination where people are able to trust and interact with each other knowing there is no third party watching, where they are not seen as data to be exploited but as a co-creators of their own worlds.
+
+ 
+</p>
