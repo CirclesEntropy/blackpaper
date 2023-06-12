@@ -269,4 +269,6 @@ Powerful entities continue to leave no stone unturned to indulge in a debauched 
 
 Circles Entropy points towards an autonomous technological imagination where people are able to trust and interact with each other knowing there is no third party watching, where they are not seen as data to be exploited but as a co-creators of their own worlds.
 
+---
+
 <!-- Minor point but I think there is room in here - perhaps in places I've mentioned that examples could be useful - for more footnotes, instead of just one on its own  -->
