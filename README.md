@@ -51,7 +51,7 @@ Entropy is a physical concept that measures the degree of disorder or randomness
 
 As individuals become seamlessly entangled with the data they produce and in the process form their own data simulacra, a lack of autonomy over it has led to these simulacra becoming increasingly commodified and entropic with the emergence of an unscrupulous marketplace where data is owned by third parties and sold to the highest bidder. Thus, it becomes important to reduce entropy of this data in order to not completely abstract it from the human being it represents. Transposing the ideas of Schrödinger, "islands of low data entropy" must actively be maintained by providing complete data autonomy and zero-compromise privacy and security guarantees for users.
 
-Attempting to address this problem leads to questions such as: what if it were possible to perform meaningful computations on data where the individual inputs of each person are hidden, and where the outputs enabled people to perform meaningful actions without revealing who is who in the network?
+Attempting to address this problem leads to questions such as: what if it were possible to perform meaningful computations on data where the individual inputs of each person are hidden, and where the outputs enabled people to perform meaningful actions without revealing identities in the network, thus preserving data autonomy and privacy?
 <!-- Thus protecting individual + collective relations (from the last point). -->
 <!-- Perhaps we can make a stronger point to these questions (and the "why" of Entropy) if we mention the issue with the current credit/CirclesUBI system and we need an AWoT in the first palce -->
 
