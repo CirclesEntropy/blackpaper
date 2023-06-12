@@ -1,3 +1,4 @@
+<style>body {text-align: justify}</style>
 <div id='section-id-3'/>
 
 # Circles Entropy: An Anonymous Trust and Credit System
