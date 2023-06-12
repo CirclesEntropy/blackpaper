@@ -76,10 +76,7 @@ Circles Entropy comprises the following key elements:
 1. **P2P Intent Gossip Network:** This component serves as a virtual overlay network, facilitating the transmission of user-defined partial state transitions. It enables users to share and exchange information without revealing their identities.
 2. **Graph Solver Network:** The graph solver network plays a crucial role in matching the shared state transitions to form atomic transactions. It ensures secure computation over trust and credit graphs.
 3. **Settlement Layer:** The settlement layer serves as a platform where the solver nodes publish transaction proofs. It provides a mechanism for verifying the validity and integrity of transactions, enhancing the overall security of the system.
-<!-- there was a comment/discussion from people at the Informal Co-Fi team that we should look into the SUAVE model by Flashbots and apply it somehow with the intent architecture, whereby we have a blockchain that pays out solver fees in ensos. I asked around and I was sent the following two blog posts:
- This is the MEV-Boost builder in SGX https://writings.flashbots.net/block-building-inside-sgx
-- This is the MPC-based backrunning  https://writings.flashbots.net/backrunning-private-txs-
- -->
+<!-- there was a comment/discussion from people at the Informal Co-Fi team that we should look into the SUAVE model by Flashbots and apply it somehow with the intent architecture, whereby we have a blockchain that pays out solver fees in ensos. I asked around and I was sent the following two blog posts: This is the MEV-Boost builder in SGX https://writings.flashbots.net/block-building-inside-sgx - This is the MPC-based backrunning https://writings.flashbots.net/backrunning-private-txs- -->
 5. **Utility Token:** To support the functionalities of the network, a utility token is utilized as a means of payment for the services provided by the gossip and solver nodes.
 
 
