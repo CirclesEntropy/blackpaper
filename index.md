@@ -155,7 +155,6 @@ To incentivise participants and encourage them to contribute their computing pow
 
 The cost per solver operation and the maintenance of gossip nodes within Circles Entropy will be determined by several factors, including the complexity of the computation, the computing power required, the supply and demand dynamics of computing resources within the network, as well as the labor costs associated with maintaining and developing the Circles Entropy protocol.
 
-To facilitate the implementation of this incentive system, we plan to issue an initial supply of 1.2 billion Ensōs on the [Evmos](https://evmos.org/) blockchain.
 
 <div id='section-id-126'/>
 
